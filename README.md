@@ -1,6 +1,8 @@
 # Sulta Tech Website
 
-This is a modern Next.js website converted from a PHP implementation. You have two options for hosting this website:
+This is a modern Next.js website. You have two options for hosting this website:
+
+[sultatech.com](https://sultatech.com)
 
 ## Option 1: Self-Hosting
 
@@ -65,8 +67,9 @@ You can deploy this Next.js application to various platforms:
 
 For a hassle-free experience, you can opt for Sulta Tech's Managed Hosting Plan:
 
-- **Price**: R99 per month
+- **Price**: Free (For LCS Only)
 - **Includes**:
+  - Upto 10 000 visitors per month
   - Professional hosting setup
   - Maintenance and updates
   - Technical support
@@ -81,6 +84,3 @@ To subscribe to the managed hosting plan, contact:
 For any technical issues or queries:
 - Contact Sulta Tech support at info@sultatech.com
 
-## License
-
-[Add your license information here] 
