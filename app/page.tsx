@@ -4,6 +4,7 @@ import { ArrowRight, CheckCircle, Code, Headphones, Mail, MapPin, Phone, Users }
 
 import { Button } from "@/components/ui/button"
 import Form from "@/components/form"
+import { MobileNav } from "@/components/mobile-nav"
 
 export default function Home() {
   return (
@@ -11,7 +12,7 @@ export default function Home() {
       {/* Navigation */}
       <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-16 items-center justify-between">
-          <div className="flex items-center gap-2">
+          <div className="hidden md:flex items-center gap-2">
             <Image
               src="/images/lcs-logo.png"
               alt="Leseding Consulting Services Logo"
@@ -35,6 +36,8 @@ export default function Home() {
               Contact
             </Link>
           </nav>
+  <MobileNav />
+
           <Button asChild className="hidden bg-primary hover:bg-primary/90 sm:flex">
             <Link href="#contact">
               Get in Touch <ArrowRight className="ml-2 h-4 w-4" />
@@ -67,7 +70,7 @@ export default function Home() {
               <Button size="lg" className="bg-primary text-white hover:bg-primary/90" asChild>
                 <Link href="#services">Our Services</Link>
               </Button>
-              <Button size="lg" variant="outline" className="border-primary text-white hover:bg-primary/10" asChild>
+              <Button size="lg" variant="outline" className="border-primary text-black hover:bg-primary/10" asChild>
                 <Link href="#contact">Contact Us</Link>
               </Button>
             </div>

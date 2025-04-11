@@ -75,6 +75,10 @@
   }
 }
 
+* {
+  scroll-behavior: smooth;
+}
+
 .gradient-bg {
   background: linear-gradient(
     135deg,
