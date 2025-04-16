@@ -12,10 +12,12 @@ export function MobileNav() {
 
   return (
     <div className="md:hidden">
+      <a href="#hero">
         <div className="flex justify-center items-center gap-2">
         <Image src="/images/lcs-logo.png" alt="Leseding Consulting Services Logo" width={40} height={40} />
         <p className="text-lg font-bold">LCS</p>
         </div>
+        </a>
       <Button
         variant="ghost"
         size="icon"

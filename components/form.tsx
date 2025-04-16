@@ -15,8 +15,7 @@ export default function Form() {
     setIsLoading(true)
     setIsSuccess(false)
     setIsError(false)
-     const realEmail = "info@lesedingconsulting.co.za"
-     const testEmail = "sultatech.sa@gmail.com"
+     const realEmail = "lesedingconsulting@gmail.com"
      
     try {
       const response = await fetch("https://sultatech.com/api/mail", {
@@ -30,7 +29,7 @@ export default function Form() {
           email, 
           subject, 
           message, 
-          recipient: testEmail
+          recipient: realEmail
         }),
       })
 

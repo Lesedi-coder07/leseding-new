@@ -13,6 +13,7 @@ export default function Home() {
       <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-16 items-center justify-between">
           <div className="hidden md:flex items-center gap-2">
+            <a href="#hero" className="md:flex items-center gap-2"> 
             <Image
               src="/images/lcs-logo.png"
               alt="Leseding Consulting Services Logo"
@@ -20,8 +21,13 @@ export default function Home() {
               height={40}
               className="h-10 w-auto"
             />
+            
+            
+            
             <span className="hidden text-xl font-bold sm:inline-block">Leseding Consulting Services</span>
+            </a>
           </div>
+         
           <nav className="hidden md:flex md:gap-6 lg:gap-10">
             <Link href="#about" className="text-sm font-medium transition-colors hover:text-primary">
               About
@@ -36,6 +42,7 @@ export default function Home() {
               Contact
             </Link>
           </nav>
+         
   <MobileNav />
 
           <Button asChild className="hidden bg-primary hover:bg-primary/90 sm:flex">
@@ -48,7 +55,7 @@ export default function Home() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative overflow-hidden bg-gradient-radial from-white via-blue-50 to-green-50 py-20 md:py-32">
+        <section id="hero" className="relative overflow-hidden bg-gradient-radial from-white via-blue-50 to-green-50 py-20 md:py-32">
           <div className="container relative z-10 flex flex-col items-center text-center">
             <div className="mb-8 flex justify-center">
               <Image
@@ -70,7 +77,7 @@ export default function Home() {
               <Button size="lg" className="bg-primary text-white hover:bg-primary/90" asChild>
                 <Link href="#services">Our Services</Link>
               </Button>
-              <Button size="lg" variant="outline" className="border-primary text-black hover:bg-primary/10" asChild>
+              <Button size="lg" variant="outline" className="border-primary text-black hover:bg-primary/10 hover:text-black" asChild>
                 <Link href="#contact">Contact Us</Link>
               </Button>
             </div>
@@ -289,6 +296,7 @@ export default function Home() {
           </div>
         </section>
       </main>
+      <div className="bg-black text-white right-5 bottom-5 z-50 flex justify-center fixed w-10 h-10 rounded-full text-lg hover:bg-gray-800 transition-colors"><a href="#hero" className="flex items-center justify-center w-full h-full">^</a></div>
 
       {/* Footer */}
       <footer className="border-t bg-gradient-to-r from-blue-50 via-green-50 to-orange-50 py-12">
