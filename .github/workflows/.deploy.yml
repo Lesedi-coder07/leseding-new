@@ -23,4 +23,4 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./deployment/ # Specify the directory to deploy
-        server-dir: /domains/lesedingconsulting.co.za/public_html/lcsnew # Specify the target directory on the server
+        server-dir: /domains/lesedingconsulting.co.za/public_html/lcsnew/ # Specify the target directory on the server
