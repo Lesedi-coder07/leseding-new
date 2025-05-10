@@ -30,7 +30,11 @@ jobs:
       run: |
         npm install # Install project dependencies
         npm run build # Build the project (if applicable)
-
+        # Step 2.2: Package deployment files
+        - name: Package deployment files
+          run: |
+            tar -czf deployment.tar.gz ./*
+            
     # Step 3: Set up an FTP client to upload files
     - name: Deploy to FTP Server
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
