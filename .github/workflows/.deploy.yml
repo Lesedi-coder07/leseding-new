@@ -17,10 +17,10 @@ jobs:
 
     # Step 2: Set up an FTP client to upload files
     - name: Deploy to FTP Server
-      uses: SamKirkland/FTP-Deploy-Action@v4
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: ./ # Specify the directory to deploy
-        server-dir: /path/to/your/server/directory # Specify the target directory on the server
+        local-dir: ./deployment # Specify the directory to deploy
+        server-dir: /domains/lesedingconsulting.co.za/public_html/lcsnew # Specify the target directory on the server
