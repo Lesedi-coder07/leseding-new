@@ -1,4 +1,4 @@
-# Sulta Tech Website
+# LCS Website
 
 This is a modern Next.js website. You have two options for hosting this website:
 
