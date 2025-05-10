@@ -9,13 +9,29 @@ jobs:
   deploy:
     name: Deploy Application via FTP
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./deployment/ # Specify the working directory for deployment
 
     steps:
     # Step 1: Checkout the code from the repository
     - name: Checkout code
       uses: actions/checkout@v3
 
-    # Step 2: Set up an FTP client to upload files
+    # Step 2: Set up Node.js environment
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18' # Specify the Node.js version
+
+    # Step 2.1: Install dependencies
+    - name: Install dependencies
+      run: |
+        npm install # Install project dependencies
+        npm run build # Build the project (if applicable)
+
+    # Step 3: Set up an FTP client to upload files
     - name: Deploy to FTP Server
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
