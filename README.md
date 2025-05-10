@@ -4,7 +4,38 @@ This is a modern Next.js website. You have two options for hosting this website:
 
 [sultatech.com](https://sultatech.com)
 
-## Option 1: Self-Hosting
+### Option 1
+
+You can deploy this Next.js application to various platforms:
+
+1. **Vercel** (Recommended) [vercel.com](https://vercel.com)
+   - Fork this repository
+   - Import to Vercel
+   - Deploy
+   - Add your domain
+
+2. **Traditional VPS/Server**
+   - Install Node.js on your server
+   - Clone the repository
+   - Follow the installation steps above
+   - Use PM2 or similar process manager to keep the application running
+
+## Option 2: Managed Hosting by Sulta Tech
+
+For a hassle-free experience, you can opt for Sulta Tech's Managed Hosting Plan:
+
+- **Price**: Free (For LCS Only)
+- **Includes**:
+  - Upto 10 000 visitors per month
+  - Professional hosting setup
+  - Maintenance and updates
+  - Technical support
+  - Performance optimization
+  - Security monitoring
+
+
+
+## Option 3: Self-Hosting
 
 ### Prerequisites
 - Node.js 18.x or later
@@ -46,35 +77,6 @@ yarn start
 ```
 
 Your website should now be running on `http://localhost:3000`
-
-### Deployment Options
-
-You can deploy this Next.js application to various platforms:
-
-1. **Vercel** (Recommended)
-   - Fork this repository
-   - Import to Vercel
-   - Configure environment variables
-   - Deploy
-
-2. **Traditional VPS/Server**
-   - Install Node.js on your server
-   - Clone the repository
-   - Follow the installation steps above
-   - Use PM2 or similar process manager to keep the application running
-
-## Option 2: Managed Hosting by Sulta Tech
-
-For a hassle-free experience, you can opt for Sulta Tech's Managed Hosting Plan:
-
-- **Price**: Free (For LCS Only)
-- **Includes**:
-  - Upto 10 000 visitors per month
-  - Professional hosting setup
-  - Maintenance and updates
-  - Technical support
-  - Performance optimization
-  - Security monitoring
 
 To subscribe to the managed hosting plan, contact:
 - Email: info@sultatech.com
