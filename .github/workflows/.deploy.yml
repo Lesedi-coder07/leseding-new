@@ -1,0 +1,47 @@
+name: Deploy to Linux Server via FTP
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Deploy Application via FTP
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./deployment/ # Specify the working directory for deployment
+
+    steps:
+    # Step 1: Checkout the code from the repository
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # Step 2: Set up Node.js environment
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18' # Specify the Node.js version
+
+    # Step 2.1: Install dependencies
+    - name: Install dependencies
+      run: |
+        npm install # Install project dependencies
+        npm run build # Build the project 
+        
+    # Step 2.2: Package deployment files
+    - name: Package deployment files
+      run: |
+        tar -czf deployment.tar.gz ./*
+
+    # Step 3: Set up an FTP client to upload files
+    - name: Deploy to FTP Server
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: ./deployment/ # Specify the directory to deploy
+        server-dir: /domains/lesedingconsulting.co.za/public_html/lcsnew/ # Specify the target directory on the server

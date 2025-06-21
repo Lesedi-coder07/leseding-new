@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, CheckCircle, Code, Headphones, Mail, MapPin, Phone, Users } from "lucide-react"
@@ -5,9 +6,19 @@ import { ArrowRight, CheckCircle, Code, Headphones, Mail, MapPin, Phone, Users }
 import { Button } from "@/components/ui/button"
 import Form from "@/components/form"
 import { MobileNav } from "@/components/mobile-nav"
+import { useState } from "react"
+import { useRouter } from "next/navigation"
 
 export default function Home() {
-  return (
+  const [showLogin, setShowLogin] = useState(false)
+  const router = useRouter()
+  const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault()
+    // TODO: Add your authentication logic here
+    setShowLogin(false)
+    router.push("/portal") // Redirect to portal site
+  }
+return (
     <div className="flex min-h-screen flex-col">
       {/* Navigation */}
       <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -45,13 +56,52 @@ export default function Home() {
          
   <MobileNav />
 
-          <Button asChild className="hidden bg-primary hover:bg-primary/90 sm:flex">
-            <Link href="#contact">
-              Get in Touch <ArrowRight className="ml-2 h-4 w-4" />
+          <Button asChild 
+            className="hidden bg-primary hover:bg-primary/90 sm:flex"
+            onClick={() => setShowLogin(true)}
+          >
+            <Link href="#">
+              Login <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
         </div>
       </header>
+
+      {/* Login Modal */}
+      {showLogin && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+          <div className="bg-white rounded-lg shadow-lg p-8 max-w-sm w-full relative">
+            <button
+              className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
+              onClick={() => setShowLogin(false)}
+              aria-label="Close"
+            >
+              ×
+            </button>
+            <h2 className="text-xl font-bold mb-4 text-primary">Login</h2>
+            {/* Replace below with your actual login form */}
+            <form className="space-y-4" onSubmit={handleLogin}>
+              <div>
+                <label className="block text-sm font-medium mb-1">Email</label>
+                <input
+                  type="email"
+                  className="w-full border rounded px-3 py-2"
+                  placeholder="you@example.com"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium mb-1">Password</label>
+                <input
+                  type="password"
+                  className="w-full border rounded px-3 py-2"
+                  placeholder="••••••••"
+                />
+              </div>
+              <Button className="w-full bg-primary text-white hover:bg-primary/90">Login</Button>
+            </form>
+          </div>
+        </div>
+      )}
 
       <main className="flex-1">
         {/* Hero Section */}
